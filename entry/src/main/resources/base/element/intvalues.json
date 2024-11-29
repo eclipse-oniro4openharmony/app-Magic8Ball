@@ -1,0 +1,12 @@
+{
+  "integer": [
+    {
+      "name": "default_font_size",
+      "value": 20
+    },
+    {
+      "name": "button_height",
+      "value": 60
+    }
+  ]
+}
