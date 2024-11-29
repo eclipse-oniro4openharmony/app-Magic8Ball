@@ -10,7 +10,6 @@
 /.clang-tidy
 **/.test
 build-profile.json5
-entry/
 hvigor/
 hvigorfile.ts
 hvigorw

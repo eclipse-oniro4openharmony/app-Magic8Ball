@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Magic 8 ball"
+    },
+    {
+      "name": "button_label",
+      "value": "Ask your question and press this button"
+    },
+    {
+      "name": "half_size",
+      "value": "50%"
+    }
+  ]
+}
