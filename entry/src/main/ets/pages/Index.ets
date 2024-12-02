@@ -27,7 +27,6 @@ struct Index {
         Button($r('app.string.button_label'))
           .type(ButtonType.Capsule)
           .onClick(() => {
-
             this.isAnswer = !this.isAnswer;
           })
           .fontSize($r('app.integer.default_font_size'))
