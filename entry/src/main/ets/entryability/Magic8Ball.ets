@@ -5,8 +5,7 @@ export class Magic8Ball {
     "My sources\nsay no", "Outlook\nnot so good", "Very doubtful"]
 
   private random(edge: number) : number {
-    let result = Math.floor(Math.random() * edge) ;
-    return result;
+    return Math.floor(Math.random() * edge) ;
   }
 
   drawAnAnswer(): string{
