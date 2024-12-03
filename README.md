@@ -18,8 +18,8 @@ This part introduces the general process of the application development
     
 ### Logic and functionailities
 - The basic logic of the app is as follows:
-    •  Create a set of possible answers
-	•  On button click, draw one of the answers at random and display it in the UI.
+  - Create a set of possible answers
+  - On button click, draw one of the answers at random and display it in the UI.
 
 >**Using the Math.random() function**
 
