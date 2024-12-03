@@ -4,26 +4,34 @@ import { Magic8Ball } from '../entryability/Magic8Ball';
 @Component
 struct Index {
   @State isAnswer: boolean = false;
-  private magicBall : Magic8Ball = new Magic8Ball();
+  private magicBall: Magic8Ball = new Magic8Ball();
 
   build() {
     Row() {
       Column() {
-        if (this.isAnswer) {
-          Stack({alignContent: Alignment.Center}) {
-            Image($r('app.media.8ball_empty'))
-              .autoResize(true)
-              .height($r('app.string.half_size'))
+        Text($r('app.string.ask_label'))
+          .fontSize($r('app.integer.default_font_size'))
+          .fontWeight(FontWeight.Bold)
+        Divider()
+          .height(10)
+          .color(Color.White)
+
+        Stack({ alignContent: Alignment.Center }) {
+          Image($r('app.media.8ball_empty'))
+            .autoResize(true)
+            .height($r('app.string.half_size'))
+          if (this.isAnswer) {
             Text(this.magicBall.drawAnAnswer())
               .fontSize($r('app.integer.default_font_size'))
               .fontColor(Color.White)
               .textAlign(TextAlign.Center)
+          } else {
+            Image($r('app.media.8center'))
+              .autoResize(true)
+              .height('23%')
           }
-        } else {
-          Image($r('app.media.8ball'))
-            .autoResize(true)
-            .height($r('app.string.half_size'))
         }
+
         Button($r('app.string.button_label'))
           .type(ButtonType.Capsule)
           .onClick(() => {

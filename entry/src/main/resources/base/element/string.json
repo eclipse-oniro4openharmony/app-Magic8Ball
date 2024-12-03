@@ -14,7 +14,11 @@
     },
     {
       "name": "button_label",
-      "value": "Ask your question and press this button"
+      "value": "...and press this button"
+    },
+    {
+      "name": "ask_label",
+      "value": "Ask your question..."
     },
     {
       "name": "half_size",
