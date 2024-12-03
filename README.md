@@ -3,6 +3,9 @@
 
 Magic 8 Ball is a demo of basic UI functionality.
 
+<img width="193" alt="screen1magic8ball" src="https://github.com/user-attachments/assets/579bd59b-bf8e-4f5a-a59c-96a9e1001a03">
+
+
 ### Table of contents
  [Functionaility](#functionaility)  
  [General Process](#general-process)
