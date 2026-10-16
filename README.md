@@ -9,6 +9,10 @@ Magic 8 Ball is an OpenHarmony app for default and tablet devices that draws a r
 | Reveal a randomly selected answer by tapping the ball or **Ask again** | `Math.random()` and ArkUI `onClick` | [Answer selection](entry/src/main/ets/entryability/Magic8Ball.ets), [page](entry/src/main/ets/pages/Index.ets) |
 | Update the displayed answer after a tap | ArkUI `@State`, `Text`, and resource references | [Page](entry/src/main/ets/pages/Index.ets), [English strings](entry/src/main/resources/en_US/element/string.json), [Chinese strings](entry/src/main/resources/zh_CN/element/string.json) |
 
+## Preview
+
+<img src="images/phone-screenshot.jpeg" width="280" alt="Magic 8 Ball on a phone, showing Most likely inside the blue answer triangle and an Ask again button">
+
 ## Requirements
 
 Use Node.js 20 or later, Java 17, OpenHarmony command-line tools, and the OpenHarmony 6.1 SDK (API 23). The app compiles and targets API 23 while retaining API 20 as its minimum. Generate development signing for `com.example.magic8ball` locally.
