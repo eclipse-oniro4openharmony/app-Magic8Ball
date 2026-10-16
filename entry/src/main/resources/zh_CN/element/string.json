@@ -2,15 +2,40 @@
   "string": [
     {
       "name": "module_desc",
-      "value": "模块描述"
+      "value": "向神奇八号球提问"
     },
     {
       "name": "EntryAbility_desc",
-      "value": "description"
+      "value": "神奇八号球应用"
     },
     {
       "name": "EntryAbility_label",
-      "value": "Magic 8 ball"
-    }
+      "value": "神奇八号球"
+    },
+    { "name": "ask_again_button", "value": "再问一次" },
+    { "name": "ask_label", "value": "心里想一个是非问题" },
+    { "name": "answer_label", "value": "答案" },
+    { "name": "tap_ball_hint", "value": "轻触八号球，揭晓答案" },
+    { "name": "ball_accessibility", "value": "神奇八号球。轻触以揭晓答案" },
+    { "name": "answer_01", "value": "这是肯定的" },
+    { "name": "answer_02", "value": "毫无疑问" },
+    { "name": "answer_03", "value": "绝对没错" },
+    { "name": "answer_04", "value": "是的，当然" },
+    { "name": "answer_05", "value": "你可以相信这一点" },
+    { "name": "answer_06", "value": "在我看来，是的" },
+    { "name": "answer_07", "value": "很有可能" },
+    { "name": "answer_08", "value": "前景不错" },
+    { "name": "answer_09", "value": "是" },
+    { "name": "answer_10", "value": "迹象表明是的" },
+    { "name": "answer_11", "value": "答案不明，再试一次" },
+    { "name": "answer_12", "value": "以后再问吧" },
+    { "name": "answer_13", "value": "现在最好不告诉你" },
+    { "name": "answer_14", "value": "现在无法预测" },
+    { "name": "answer_15", "value": "集中精神再问一次" },
+    { "name": "answer_16", "value": "别指望了" },
+    { "name": "answer_17", "value": "我的回答是不" },
+    { "name": "answer_18", "value": "我的消息来源说不" },
+    { "name": "answer_19", "value": "前景不太好" },
+    { "name": "answer_20", "value": "非常值得怀疑" }
   ]
 }

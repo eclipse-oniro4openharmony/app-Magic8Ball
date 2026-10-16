@@ -1,0 +1,16 @@
+{
+  "color": [
+    {
+      "name": "surface",
+      "value": "#F8F3FF"
+    },
+    {
+      "name": "ink",
+      "value": "#0F0026"
+    },
+    {
+      "name": "accent",
+      "value": "#6024B5"
+    }
+  ]
+}

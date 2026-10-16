@@ -1,87 +1,55 @@
 # Magic 8 Ball
-## Introduction
 
-Magic 8 Ball is a demo of basic UI functionality.
+Magic 8 Ball is an OpenHarmony app for default and tablet devices that draws a random answer to a yes or no question.
 
-<img width="193" alt="screen1magic8ball" src="images/screenshot.png">
+## What this example demonstrates
 
+| Capability | API or platform service | Where to look |
+| --- | --- | --- |
+| Reveal a randomly selected answer by tapping the ball or **Ask again** | `Math.random()` and ArkUI `onClick` | [Answer selection](entry/src/main/ets/entryability/Magic8Ball.ets), [page](entry/src/main/ets/pages/Index.ets) |
+| Update the displayed answer after a tap | ArkUI `@State`, `Text`, and resource references | [Page](entry/src/main/ets/pages/Index.ets), [English strings](entry/src/main/resources/en_US/element/string.json), [Chinese strings](entry/src/main/resources/zh_CN/element/string.json) |
 
-### Table of contents
- [Functionaility](#functionaility)  
- [General Process](#general-process)
+## Requirements
 
-## Functionaility
-    •  Ask a yes/no question, press the button and the app will give you and answer.
-    •  This is a simple app with basic UI functionality and interaction.
+Use Node.js 20 or later, Java 17, OpenHarmony command-line tools, and the OpenHarmony 6.1 SDK (API 23). The app compiles and targets API 23 while retaining API 20 as its minimum. Generate development signing for `com.example.magic8ball` locally.
 
-## General Process
-This part introduces the general process of the application development  
-1. [Logic and functionailities](#logic-and-functionailities)
-2. [Checking and testing](#checking-and-testing)
-    
-### Logic and functionailities
-- The basic logic of the app is as follows:
-  - Create a set of possible answers
-  - On button click, draw one of the answers at random and display it in the UI.
+The [module manifest](entry/src/main/module.json5) lists default and tablet devices. It declares no permissions, and the app uses no external service.
 
->**Using the Math.random() function**
+## Build and run
 
-- Within your business logic:
-	After creating a collection (array) of possible answers, use the Math.random() function to draw one of them.
+From the repository root, run:
 
-```typescript
-	export class Magic8Ball {
-		private answersArray = ["It is certain", "It is\ndecidedly so", "Without a doubt", "Yes, definitely", "You may\nrely on it",
-			"As I see it,\nyes", "Most likely", "Outlook good", "Yes", "Signs point\nto yes", "Reply hazy,\ntry again", "Ask again later",
-			"Better not\ntell you now", "Cannot\npredict now", "Concentrate\nand ask again", "Don’t count\non it", "My reply is no",
-			"My sources\nsay no", "Outlook\nnot so good", "Very doubtful"]
-
-		private random(edge: number) : number {
-			return Math.floor(Math.random() * edge) ;
-		}
-
-		drawAnAnswer(): string{
-			return this.answersArray[this.random(this.answersArray.length)];
-		}
-	}
-```
-- In your UI class:
-	Create an instance of the Magic8Ball class and bind the onClick() method of a button to the drawAnAnswer() method.
-
-```typescript
-	private magicBall : Magic8Ball = new Magic8Ball();
-	(...)
-	
-	if (this.isAnswer) {
-        Stack({alignContent: Alignment.Center}) {
-			Image($r('app.media.8ball_empty'))
-				.autoResize(true)
-				.height($r('app.string.half_size'))
-            Text(this.magicBall.drawAnAnswer())
-				.fontSize($r('app.integer.default_font_size'))
-				.fontColor(Color.White)
-				.textAlign(TextAlign.Center)
-			}
-        } else {
-			Image($r('app.media.8ball'))
-				.autoResize(true)
-				.height($r('app.string.half_size'))
-        }
-		
-		
-	
-	(...)
-	
-	Button($r('app.string.button_label'))
-        .type(ButtonType.Capsule)
-        .onClick(() => {
-			this.isAnswer = !this.isAnswer;
-        })
+```sh
+npm install --global @oniroproject/oniro-app@0.10.0
+oniro-app sdk install 6.1
+oniro-app cmdtools install
+cp build-profile.example.json5 build-profile.json5
+oniro-app sign
+oniro-app build
 ```
 
-> **Note**  
-> The `isAnswer` variable has been marked with a `@State` decorator, which causes rebuilding of the whole `build(){}` segment every time `isAnswer` is changed. 
+The signed HAP is at `entry/build/default/outputs/default/entry-default-signed.hap`. Install it on an OpenHarmony device with a compatible API level. Local signing files and `build-profile.json5` are ignored by Git. Use separate credentials for distribution.
 
+## Use
 
-### Checking and Testing
-- All functionalities can be tested on the `Previewer` or on an `Emulator`.
+Think of a yes or no question and tap the ball. Tap the ball again or press **Ask again** to draw another answer. The page selects from 20 answers and displays them in English or Chinese according to the device's resource locale.
+
+## Explore the implementation
+
+[EntryAbility](entry/src/main/ets/entryability/EntryAbility.ets) loads `pages/Index`. The [page](entry/src/main/ets/pages/Index.ets) passes 20 localized string resources to `Magic8Ball<ResourceStr>`. Its ball and button handlers call `drawAnAnswer()` in the [answer selection class](entry/src/main/ets/entryability/Magic8Ball.ets), store the selected resource in `@State`, and display it with `Text(this.answer)`. The [base](entry/src/main/resources/base/element/string.json), [English](entry/src/main/resources/en_US/element/string.json), and [Chinese](entry/src/main/resources/zh_CN/element/string.json) resource files contain the answer text. Editable artwork for the ball and app icon is in [assets/brand](assets/brand/).
+
+When `answer` changes, ArkUI updates components that depend on it.
+
+## Verify
+
+On a device, check that the initial ball shows the 8, tapping it shows an answer, and tapping the ball or **Ask again** draws again. Change the device language between English and Chinese to check the localized labels and answers.
+
+## Contributing
+
+These apps are focused examples of specific platform capabilities. Contributions that keep an example correct, buildable, and clear are welcome, including bug fixes, documentation and setup corrections, and improvements to its existing behavior. Please keep pull requests within the app's stated purpose and describe how you verified the change.
+
+**Found a problem but can't fix it?** Open an issue in this repository; a pull request is not required. For a bug or broken build, include the steps to reproduce it, what you expected, what happened, and your device, OS, and SDK/API version. Logs or screenshots are helpful when available. You can also open an issue for inaccurate or unclear documentation.
+
+## License
+
+This project is licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE).
