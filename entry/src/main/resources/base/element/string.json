@@ -2,27 +2,46 @@
   "string": [
     {
       "name": "module_desc",
-      "value": "module description"
+      "value": "Ask the Magic 8 Ball a question"
     },
     {
       "name": "EntryAbility_desc",
-      "value": "description"
+      "value": "Ask the Magic 8 Ball a question"
     },
     {
       "name": "EntryAbility_label",
-      "value": "Magic 8 ball"
+      "value": "Magic 8 Ball"
     },
     {
-      "name": "button_label",
-      "value": "...and press this button"
+      "name": "ask_again_button",
+      "value": "Ask again"
     },
     {
       "name": "ask_label",
-      "value": "Ask your question..."
+      "value": "Think of a yes or no question"
     },
-    {
-      "name": "half_size",
-      "value": "50%"
-    }
+    { "name": "answer_label", "value": "Your answer" },
+    { "name": "tap_ball_hint", "value": "Tap the ball to reveal your answer" },
+    { "name": "ball_accessibility", "value": "Magic 8 Ball. Tap to reveal an answer" },
+    { "name": "answer_01", "value": "It is certain" },
+    { "name": "answer_02", "value": "It is decidedly so" },
+    { "name": "answer_03", "value": "Without a doubt" },
+    { "name": "answer_04", "value": "Yes, definitely" },
+    { "name": "answer_05", "value": "You may rely on it" },
+    { "name": "answer_06", "value": "As I see it, yes" },
+    { "name": "answer_07", "value": "Most likely" },
+    { "name": "answer_08", "value": "Outlook good" },
+    { "name": "answer_09", "value": "Yes" },
+    { "name": "answer_10", "value": "Signs point to yes" },
+    { "name": "answer_11", "value": "Unclear, try again" },
+    { "name": "answer_12", "value": "Ask again later" },
+    { "name": "answer_13", "value": "Not telling you now" },
+    { "name": "answer_14", "value": "Cannot predict now" },
+    { "name": "answer_15", "value": "Focus and ask again" },
+    { "name": "answer_16", "value": "Don't count on it" },
+    { "name": "answer_17", "value": "My reply is no" },
+    { "name": "answer_18", "value": "My sources say no" },
+    { "name": "answer_19", "value": "Outlook not so good" },
+    { "name": "answer_20", "value": "Very doubtful" }
   ]
 }

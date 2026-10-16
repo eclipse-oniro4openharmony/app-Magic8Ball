@@ -1,14 +1,17 @@
-export class Magic8Ball {
-  private answersArray = ["It is certain", "It is\ndecidedly so", "Without a doubt", "Yes, definitely", "You may\nrely on it",
-    "As I see it,\nyes", "Most likely", "Outlook good", "Yes", "Signs point\nto yes", "Reply hazy,\ntry again", "Ask again later",
-    "Better not\ntell you now", "Cannot\npredict now", "Concentrate\nand ask again", "Don’t count\non it", "My reply is no",
-    "My sources\nsay no", "Outlook\nnot so good", "Very doubtful"]
+export class Magic8Ball<T> {
+  private readonly answers: T[];
+  private readonly randomValue: () => number;
 
-  private random(edge: number) : number {
-    return Math.floor(Math.random() * edge) ;
+  constructor(answers: T[], randomValue: () => number = () => Math.random()) {
+    if (answers.length === 0) {
+      throw new Error('Magic 8 Ball requires at least one answer');
+    }
+    this.answers = answers;
+    this.randomValue = randomValue;
   }
 
-  drawAnAnswer(): string{
-    return this.answersArray[this.random(this.answersArray.length)];
+  drawAnAnswer(): T {
+    const index: number = Math.floor(this.randomValue() * this.answers.length);
+    return this.answers[index];
   }
 }
